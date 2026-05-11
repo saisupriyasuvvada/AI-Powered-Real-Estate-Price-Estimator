@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Bengaluru Property Price Predictor | Smart Real Estate Insights
+    </title>
+
+    <link rel="icon" href="favicon.png" type="image/png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="app.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="logo">
+          <i class="fas fa-home"></i>
+          <span>BengaluruHomes</span>
+        </div>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#predictor">Predictor</a>
+          <a href="#insights">Insights</a>
+          
+        </div>
+      </div>
+    </nav>
+
+    
+
+    <!-- Hero Section -->
+    <div class="hero">
+      <div class="hero-content">
+        <h1>Bengaluru Property Price Predictor</h1>
+        <p>
+          Get accurate price estimates for properties across Bengaluru using
+          advanced ML algorithms
+        </p>
+        <a href="#predictor" class="cta-button">Predict Now</a>
+      </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <div class="features-grid">
+          <div class="feature-card">
+            <i class="fas fa-chart-line"></i>
+            <h3>Data-Driven Insights</h3>
+            <p>
+              Predictions based on extensive Bengaluru real estate market data
+            </p>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-map-marked-alt"></i>
+            <h3>Location-Specific</h3>
+            <p>Covers major localities across Bengaluru metropolitan area</p>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-robot"></i>
+            <h3>ML Powered</h3>
+            <p>Uses advanced machine learning for accurate predictions</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Predictor Section -->
+    <section id="predictor" class="predictor-section">
+      <div class="container">
+        <!-- In your predictor section -->
+        <div class="prediction-card">
+          <h2 class="card-title">Property Price Predictor</h2>
+          <p class="card-subtitle">
+            Fill in the details below to get an estimated property value
+          </p>
+
+          <form id="predictForm" class="predict-form" novalidate>
+            <div class="form-group">
+              <label for="uiSqft">
+                <i class="fas fa-vector-square"></i>
+                Total Area (Square Feet) <span class="required">*</span>
+              </label>
+              <input
+                type="number"
+                id="uiSqft"
+                class="form-control"
+                value="1000"
+                min="100"
+                required
+                data-error="Please enter a valid area (minimum 100 sq ft)"
+              />
+              <div class="error-message"></div>
+            </div>
+
+            <div class="form-group">
+              <label>
+                <i class="fas fa-bed"></i>
+                Number of Bedrooms (BHK) <span class="required">*</span>
+              </label>
+              <div
+                class="toggle-group"
+                data-error="Please select number of bedrooms"
+              >
+                <input
+                  type="radio"
+                  id="bhk-1"
+                  name="uiBHK"
+                  value="1"
+                  required
+                />
+                <label for="bhk-1">1</label>
+                <input type="radio" id="bhk-2" name="uiBHK" value="2" />
+                <label for="bhk-2">2</label>
+                <input type="radio" id="bhk-3" name="uiBHK" value="3" />
+                <label for="bhk-3">3</label>
+                <input type="radio" id="bhk-4" name="uiBHK" value="4" />
+                <label for="bhk-4">4</label>
+                <input type="radio" id="bhk-5" name="uiBHK" value="5" />
+                <label for="bhk-5">5</label>
+              </div>
+              <div class="error-message"></div>
+            </div>
+
+            <div class="form-group">
+              <label>
+                <i class="fas fa-bath"></i>
+                Number of Bathrooms <span class="required">*</span>
+              </label>
+              <div
+                class="toggle-group"
+                data-error="Please select number of bathrooms"
+              >
+                <input
+                  type="radio"
+                  id="bath-1"
+                  name="uiBathrooms"
+                  value="1"
+                  required
+                />
+                <label for="bath-1">1</label>
+                <input type="radio" id="bath-2" name="uiBathrooms" value="2" />
+                <label for="bath-2">2</label>
+                <input type="radio" id="bath-3" name="uiBathrooms" value="3" />
+                <label for="bath-3">3</label>
+                <input type="radio" id="bath-4" name="uiBathrooms" value="4" />
+                <label for="bath-4">4</label>
+                <input type="radio" id="bath-5" name="uiBathrooms" value="5" />
+                <label for="bath-5">5</label>
+              </div>
+              <div class="error-message"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="uiLocations">
+                <i class="fas fa-map-marker-alt"></i>
+                Location <span class="required">*</span>
+              </label>
+              <select
+                id="uiLocations"
+                class="form-control"
+                required
+                data-error="Please select a location"
+              >
+                <option value="" disabled selected>
+                  Select Area in Bengaluru
+                </option>
+              </select>
+              <div class="error-message"></div>
+            </div>
+
+            <button type="submit" id="estimateBtn" class="btn-estimate">
+              <span>Get Price Estimate</span>
+              <i class="fas fa-calculator"></i>
+            </button>
+
+            <div id="uiEstimatedPrice" class="estimate-result hidden">
+              <div class="result-inner">
+                <span class="result-label">Estimated Property Value:</span>
+                <span class="result-value">0 Lakh</span>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Insights Section -->
+    <section id="insights" class="insights-section">
+      <div class="container">
+        <h2>Bengaluru Real Estate Insights</h2>
+        <div class="insights-grid">
+          <div class="insight-card">
+            <h3>Popular Areas</h3>
+            <ul>
+              <li>Electronic City</li>
+              <li>Whitefield</li>
+              <li>Sarjapur Road</li>
+              <li>Hebbal</li>
+            </ul>
+          </div>
+          <div class="insight-card">
+            <h3>Market Trends</h3>
+            <ul>
+              <li>Growing IT Corridor</li>
+              <li>Metro Connectivity</li>
+              <li>Smart City Initiative</li>
+              <li>Tech Park Proximity</li>
+            </ul>
+          </div>
+          <div class="insight-card">
+            <h3>Investment Tips</h3>
+            <ul>
+              <li>Upcoming Areas</li>
+              <li>Infrastructure Projects</li>
+              <li>ROI Analysis</li>
+              <li>Market Timing</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h4>About</h4>
+            <p>
+              Bengaluru Property Price Predictor uses machine learning to
+              provide accurate real estate valuations across Bengaluru.
+            </p>
+          </div>
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <a href="#predictor">Price Predictor</a>
+            <a href="#insights">Market Insights</a>
+            <a href="#about">About Us</a>
+          </div>
+          <div class="footer-section">
+            <h4>Contact</h4>
+            <p>Email: info@bengaluruhomes.com</p>
+            <p>Phone: +91 123 456 7890</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2025 Bengaluru Property Price Predictor. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Top Right AI Chatbot -->
+    <div class="chatbot-top-icon" onclick="toggleChatbot()">
+  <img src="chat.avif" alt="AI Chatbot">
+</div>
+
+    <div class="chatbot-header-container" id="chatbot">
+  <div class="chatbot-header-box">
+    <div class="chatbot-header-title">
+      AI Real Estate Assistant
+      <span onclick="toggleChatbot()" class="close-btn">✖</span>
+    </div>
+
+    <div class="chatbot-body" id="chatbot-body">
+      <div class="bot-msg">Hello! Ask me about prices, locations, and buying advice.</div>
+    </div>
+
+    <div class="chatbot-input">
+      <input type="text" id="chatbot-input" placeholder="Ask something..." />
+      <button onclick="sendMessage()">➤</button>
+    </div>
+  </div>
+</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -201,6 +201,44 @@ The chatbot provides:
 
 ---
 
+# 📸 Project Screenshots
+
+## 🏠 Home Page
+
+![Home Page](ScreenShots/home.png)
+
+---
+
+## 📊 Prediction Section
+
+![Prediction](ScreenShots/predict.png)
+
+---
+
+## 💰 Prediction Result
+
+![Result](ScreenShots/select.png)
+
+---
+
+## Footer
+
+![Footer](ScreenShots/footer.png)
+
+---
+
+## 📱 Mobile View
+
+![Mobile View](ScreenShots/mobile.png)
+
+---
+
+## 📱 Tablet View
+
+![Mobile View](ScreenShots/tablet.png)
+
+---
+
 # 👩‍💻 Author
 
 ## Suvvada Sai Supriya

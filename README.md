@@ -76,7 +76,7 @@ AI-Powered-Real-Estate-Price-Estimator/
 
 # ⚙️ Installation & Setup
 
-## 1️⃣ Clone Repository
+# 1️⃣ Clone Repository
 
 ```bash
 git clone https://github.com/saisupriyasuvvada/AI-Powered-Real-Estate-Price-Estimator.git
@@ -187,15 +187,6 @@ The chatbot provides:
 - House pricing suggestions
 - Interactive user conversation
 
----
-
-# 🌐 Deployment
-
-## Backend Deployment
-- Render
-
-## Frontend Deployment
-- Vercel / Netlify
 
 ---
 
